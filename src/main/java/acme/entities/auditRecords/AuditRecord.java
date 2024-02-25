@@ -1,5 +1,5 @@
 
-package acme.entities.codeAudits;
+package acme.entities.auditRecords;
 
 import java.util.Date;
 
@@ -10,18 +10,16 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.checkerframework.common.aliasing.qual.Unique;
-import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
-import acme.entities.auditRecords.Marks;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class CodeAudit extends AbstractEntity {
+public class AuditRecord extends AbstractEntity {
 	// Serialisation identifier -----------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
@@ -36,21 +34,11 @@ public class CodeAudit extends AbstractEntity {
 
 	@NotNull
 	@Past
-	private Date				execution;
-
-	@NotNull
-	private Type				type;
-
-	@NotNull
-	@NotBlank
-	@Length(max = 101)
-	private String				correctiveActions;
+	private Date				period;
 
 	@NotNull
 	private Marks				mark;
 
 	@URL
-	@Length(max = 255)
 	private String				link;
-
 }
