@@ -1,5 +1,5 @@
 
-package acme.entities.Objectives;
+package acme.entities.objectives;
 
 public enum Priority {
 
