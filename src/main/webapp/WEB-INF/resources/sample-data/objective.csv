@@ -1,0 +1,18 @@
+key,instantiation-moment,title,description,priority,critical-status,duration,link
+objective-01,2021/07/30 22:00,T,Description,Low,false,2021/07/30 22:00,https://example.com/objective
+objective-02,2021/07/30 22:00,Te,Description,Low,false,2021/07/30 22:00,https://example.com/objective
+objective-03,2021/07/30 22:00,Li Europan lingues es membres del sam.,Description,Low,false,2021/07/30 22:00,https://example.com/objective
+objective-04,2021/07/30 22:00,Li Europan lingues es membres del sam familie. Lor separat existentie es u,Description,Low,false,2021/07/30 22:00,https://example.com/objective
+objective-05,2021/07/30 22:00,Li Europan lingues es membres del sam familie. Lor separat existentie es un.,Description,Low,false,2021/07/30 22:00,https://example.com/objective
+objective-06,2022/07/29 23:59,Title,L,Low,false,2021/07/30 22:00,https://example.com/objective
+objective-07,2022/07/29 23:59,Title,Li.,Low,false,2021/07/30 22:00,https://example.com/objective
+objective-08,2022/07/29 23:59,Title,Li Europan lingues es membres del sam familie. Lor,Low,false,2021/07/30 22:00,https://example.com/objective
+objective-09,2022/07/29 23:59,Title,Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie mus,Low,false,2021/07/30 22:00,https://example.com/objective
+objective-10,2022/07/29 23:59,Title,Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie music,Low,false,2021/07/30 22:00,https://example.com/objective
+objective-11,2022/07/29 23:59,Title,Description,Low,false,2021/07/30 22:00,https://example.com/objective
+objective-12,2022/07/29 23:59,Title,Description,Medium,false,2021/07/30 22:00,https://example.com/objective
+objective-13,2022/07/29 23:59,Title,Description,High,false,2021/07/30 22:00,https://example.com/objective
+objective-14,2022/07/29 23:59,Title,Description,Low,false,2021/07/30 22:00,https://example.com/objective
+objective-15,2022/07/29 23:59,Title,Description,Low,true,2021/07/30 22:00,https://example.com/objective
+objective-16,2022/07/29 23:59,Title,Description,Low,false,2022/07/29 23:59,https://example.com/objective
+objective-17,2022/07/29 23:59,Title,Description,Low,false,2022/07/29 23:59,
