@@ -1,0 +1,11 @@
+key,code,period,mark,link
+audit-record-01,A-000,2022/07/29 23:59,B,https://example.com/objective
+audit-record-02,AB-555,2022/07/29 23:59,B,https://example.com/objective
+audit-record-03,ZZZ-999,2022/07/29 23:59,B,https://example.com/objective
+audit-record-04,ZZZ-999,1990/07/29 23:59,B,https://example.com/objective
+audit-record-05,ZZZ-999,2022/07/29 23:59,A_PLUS,https://example.com/objective
+audit-record-06,ZZZ-999,2022/07/29 23:59,B,https://example.com/objective
+audit-record-07,ZZZ-999,2022/07/29 23:59,C,https://example.com/objective
+audit-record-08,ZZZ-999,2022/07/29 23:59,F,https://example.com/objective
+audit-record-09,ZZZ-999,2022/07/29 23:59,F_MINUS,https://example.com/objective
+audit-record-10,ZZZ-999,2022/07/29 23:59,A,
