@@ -1,7 +1,7 @@
 
 package acme.entities.banners;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
@@ -34,7 +34,7 @@ public class Banner extends AbstractEntity {
 	private Date				instantiationMoment;
 
 	//display period (must start at any moment after the instantiation/update moment and must last for at least one week), 
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	private Date				displayPeriod;
