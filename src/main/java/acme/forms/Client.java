@@ -14,7 +14,7 @@ public class Client extends AbstractForm {
 	Double						totalNumberOfProgressLogsBetween50to75;
 	Double						totalNumberOfProgressLogsAbove75;
 
-	Double						ContractsBudget;
+	Double						averageContractsBudget;
 	Double						deviationProjectsCost;
 	Double						minimumContractsBudget;
 	Double						maximumContractsBudget;
