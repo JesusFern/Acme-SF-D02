@@ -33,6 +33,7 @@ public class ProgressLog extends AbstractEntity {
 
 	// Attributes
 	@NotBlank
+	@NotNull
 	@Unique
 	@Pattern(regexp = "PG-[A-Z]{1,2}-[0-9]{4}")
 	private String				recordId;
@@ -42,6 +43,7 @@ public class ProgressLog extends AbstractEntity {
 	private double				percentageCompleteness;
 
 	@NotBlank
+	@NotNull
 	@Size(max = 100)
 	private String				comment;
 
@@ -51,6 +53,7 @@ public class ProgressLog extends AbstractEntity {
 	private Date				registrationMoment;
 
 	@NotBlank
+	@NotNull
 	@Size(max = 75)
 	private String				responsiblePerson;
 

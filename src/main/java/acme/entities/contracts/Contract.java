@@ -40,18 +40,22 @@ public class Contract extends AbstractEntity {
 	private Date				instantiationMoment;
 
 	@NotBlank
+	@NotNull
 	@Size(max = 75)
 	private String				providerName;
 
 	@NotBlank
+	@NotNull
 	@Size(max = 75)
 	private String				customerName;
 
 	@NotBlank
+	@NotNull
 	@Size(max = 100)
 	private String				goals;
 
 	@PositiveOrZero
+	@NotNull
 	private Money				budget;
 
 }
