@@ -1,21 +1,22 @@
 
-package acme.entities.risks;
+package acme.entities.sponsorships;
 
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-import javax.validation.constraints.Max;
+import javax.validation.Valid;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
-import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
@@ -25,7 +26,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Risk extends AbstractEntity {
+public class Invoice extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -33,39 +34,50 @@ public class Risk extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
+	@NotNull
+	@NotBlank
+	@Pattern(regexp = "IN-[0-9]{4}-[0-9]{4}")
 	@Column(unique = true)
-	@Pattern(regexp = "R-[0-9]{3}")
-	@NotBlank
-	@NotNull
-	private String				reference;
+	private String				code;
 
-	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
 	@Past
-	@Temporal(TemporalType.DATE)
-	private Date				identificationDate;
+	@NotNull
+	private Date				registrationTime;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Future
+	@NotNull
+	private Date				startDate;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Past
+	@NotNull
+	private Date				endDate;
+
+	@NotNull
+	@Valid
+	@Min(1)
+	private Integer				quantity;
 
 	@NotNull
 	@Min(0)
-	private Double				impact;
-
-	@NotNull
-	@Min(0)
-	@Max(100)
-	private Double				probability;
-
-	@NotNull
-	@NotBlank
-	@Length(max = 101)
-	private String				description;
-
-	@URL
-	private String				link;
-
-	// Derived attributes -----------------------------------------------------
+	private Double				tax;
 
 
 	@Transient
-	private Double getValue() {
-		return this.impact * this.probability;
+	public Double totalAmount() {
+		Double result;
+		result = this.getQuantity() * this.getTax();
+		return result;
 	}
+
+
+	@URL
+	private String		link;
+
+	@NotNull
+	@Valid
+	@ManyToOne
+	private Sponsorship	sponsorship;
 }

@@ -1,17 +1,17 @@
 
-package acme.entities.auditRecords;
+package acme.entities.claims;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
-import org.checkerframework.common.aliasing.qual.Unique;
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
@@ -21,27 +21,43 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class AuditRecord extends AbstractEntity {
+public class Claim extends AbstractEntity {
+
 	// Serialisation identifier -----------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
+	@Pattern(regexp = "C-[0-9]{4}")
 	@NotBlank
-	@Unique
-	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}")
+	@Column(unique = true)
 	@NotNull
 	private String				code;
 
-	@NotNull
 	@Past
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				period;
-
 	@NotNull
-	private Marks				mark;
+	private Date				instantiationMoment;
+
+	@Length(max = 76)
+	@NotBlank
+	@NotNull
+	private String				heading;
+
+	@Length(max = 101)
+	@NotBlank
+	@NotNull
+	private String				description;
+
+	@Length(max = 101)
+	@NotBlank
+	@NotNull
+	private String				department;
+
+	@Email
+	private String				email;
 
 	@URL
 	private String				link;
+
 }

@@ -1,0 +1,19 @@
+key,instantiation-moment,title,description,priority,critical-status,duration-start,duration-end,link
+objective-01,2000/01/01 00:00,Title,Description,Low,false,2000/01/01 00:01,2000/01/01 02:01,https://example.com/objective
+objective-02,2022/07/29 23:58,Title,Description,Low,false,2022/07/29 23:59,2022/07/30 00:00,https://example.com/objective
+objective-03,2000/01/01 00:00,T,Description,Low,false,2021/07/30 22:00,2021/07/30 22:00,https://example.com/objective
+objective-04,2000/01/01 00:00,Te,Description,Low,false,2000/01/01 00:01,2000/01/01 02:01,https://example.com/objective
+objective-05,2000/01/01 00:00,Li Europan lingues es membres del sam.,Description,Low,false,2000/01/01 00:01,2000/01/01 02:01,https://example.com/objective
+objective-06,2000/01/01 00:00,Li Europan lingues es membres del sam familie. Lor separat existentie es u,Description,Low,false,2000/01/01 00:01,2000/01/01 02:01,https://example.com/objective
+objective-07,2000/01/01 00:00,Li Europan lingues es membres del sam familie. Lor separat existentie es un.,Description,Low,false,2000/01/01 00:01,2000/01/01 02:01,https://example.com/objective
+objective-08,2000/01/01 00:00,Title,L,Low,false,2000/01/01 00:01,2000/01/01 02:01,https://example.com/objective
+objective-09,2000/01/01 00:00,Title,Li.,Low,false,2000/01/01 00:01,2000/01/01 02:01,https://example.com/objective
+objective-10,2000/01/01 00:00,Title,Li Europan lingues es membres del sam familie. Lor,Low,false,2000/01/01 00:01,2000/01/01 02:01,https://example.com/objective
+objective-11,2000/01/01 00:00,Title,Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie mus,Low,false,2000/01/01 00:01,2000/01/01 02:01,https://example.com/objective
+objective-12,2000/01/01 00:00,Title,Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie music,Low,false,2000/01/01 00:01,2000/01/01 02:01,https://example.com/objective
+objective-13,2000/01/01 00:00,Title,Description,Low,false,2000/01/01 00:01,2000/01/01 02:01,https://example.com/objective
+objective-14,2000/01/01 00:00,Title,Description,Medium,false,2000/01/01 00:01,2000/01/01 02:01,https://example.com/objective
+objective-15,2000/01/01 00:00,Title,Description,High,false,2000/01/01 00:01,2000/01/01 02:01,https://example.com/objective
+objective-16,2000/01/01 00:00,Title,Description,Low,false,2000/01/01 00:01,2000/01/01 02:01,https://example.com/objective
+objective-17,2000/01/01 00:00,Title,Description,Low,true,2000/01/01 00:01,2000/01/01 02:01,https://example.com/objective
+objective-18,2000/01/01 00:00,Title,Description,Low,false,2000/01/01 00:01,2000/01/01 02:01,
