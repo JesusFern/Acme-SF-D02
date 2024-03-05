@@ -1,7 +1,7 @@
 
 package acme.entities.contracts;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
@@ -10,6 +10,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 
 import org.checkerframework.common.aliasing.qual.Unique;
@@ -50,8 +51,7 @@ public class Contract extends AbstractEntity {
 	@Size(max = 100)
 	private String				goals;
 
-	//missing validation (less than or equal to the corresponding project cost)
-	@NotNull
+	@PositiveOrZero
 	private Money				budget;
 
 }
