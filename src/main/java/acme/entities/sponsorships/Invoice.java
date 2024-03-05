@@ -5,9 +5,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.validation.Valid;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -42,27 +45,39 @@ public class Invoice extends AbstractEntity {
 	@NotNull
 	private Date				registrationTime;
 
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
+	@Future
 	@NotNull
-	private Date				dueDate;
+	private Date				startDate;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Past
+	@NotNull
+	private Date				endDate;
 
 	@NotNull
+	@Valid
 	@Min(1)
 	private Integer				quantity;
 
 	@NotNull
 	@Min(0)
-	private Integer				tax;
+	private Double				tax;
 
 
 	@Transient
-	public Integer totalAmount() {
-		Integer result;
-		result = this.getQuantity() + this.getTax();
+	public Double totalAmount() {
+		Double result;
+		result = this.getQuantity() * this.getTax();
 		return result;
 	}
 
 
 	@URL
-	private String link;
+	private String		link;
+
+	@NotNull
+	@Valid
+	@ManyToOne
+	private Sponsorship	sponsorship;
 }

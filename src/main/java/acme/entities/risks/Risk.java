@@ -5,6 +5,9 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -38,6 +41,7 @@ public class Risk extends AbstractEntity {
 
 	@NotNull
 	@Past
+	@Temporal(TemporalType.DATE)
 	private Date				identificationDate;
 
 	@NotNull
@@ -50,10 +54,6 @@ public class Risk extends AbstractEntity {
 	private Double				probability;
 
 	@NotNull
-	//Falta especificar como se calcula
-	private Double				value;
-
-	@NotNull
 	@NotBlank
 	@Length(max = 101)
 	private String				description;
@@ -61,4 +61,11 @@ public class Risk extends AbstractEntity {
 	@URL
 	private String				link;
 
+	// Derived attributes -----------------------------------------------------
+
+
+	@Transient
+	private Double getValue() {
+		return this.impact * this.probability;
+	}
 }

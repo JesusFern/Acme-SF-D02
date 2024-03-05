@@ -15,8 +15,17 @@ public class Auditor extends AbstractForm {
 
 	// Attributes -------------------------------------------------------------
 
-	Double						totalNumberOfCodeAudit;
-	Double						totalNumberOfAuditRecords;
-	Double						totalNumberOfPeriod;
+	Double						totalNumberOfStaticCodeAudit;
+	Double						totalNumberOfDynamicCodeAudit;
+
+	Double						averageNumberOfAuditRecords;
+	Double						deviationNumberOfAuditRecords;
+	Double						minimumNumberOfAuditRecords;
+	Double						maximumNumberOfAuditRecords;
+
+	Double						averageNumberOfPeriod;
+	Double						deviationNumberOfPeriod;
+	Double						minimumNumberOfPeriod;
+	Double						maximumNumberOfPeriod;
 
 }
