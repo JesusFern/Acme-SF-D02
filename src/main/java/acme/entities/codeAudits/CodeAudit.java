@@ -4,6 +4,8 @@ package acme.entities.codeAudits;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -36,6 +38,7 @@ public class CodeAudit extends AbstractEntity {
 
 	@NotNull
 	@Past
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				execution;
 
 	@NotNull
