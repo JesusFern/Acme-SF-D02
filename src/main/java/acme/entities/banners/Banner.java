@@ -42,17 +42,18 @@ public class Banner extends AbstractEntity {
 	@NotNull
 	private Date				endDisplayPeriod;
 
-	@NotBlank
 	@URL
+	@NotNull
 	@Length(max = 255)
 	private String				pictureLink;
 
 	@NotBlank
+	@NotNull
 	@Length(max = 75)
 	private String				slogan;
 
 	@URL
-	@NotBlank
+	@NotNull
 	@Length(max = 255)
 	private String				targetWebDocumentLink;
 
