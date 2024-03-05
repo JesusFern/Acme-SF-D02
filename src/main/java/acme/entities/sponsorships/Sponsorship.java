@@ -10,6 +10,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -19,6 +20,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
+import acme.client.data.datatypes.Money;
 import acme.entities.projects.Project;
 import lombok.Getter;
 import lombok.Setter;
@@ -45,13 +47,20 @@ public class Sponsorship extends AbstractEntity {
 	@NotNull
 	private Date				moment;
 
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
+	@Future
 	@NotNull
-	private Date				duration;
+	private Date				startSponsor;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Past
+	@NotNull
+	private Date				endSponsor;
 
 	@NotNull
+	@Valid
 	@Min(1)
-	private Integer				amount;
+	private Money				amount;
 
 	@NotNull
 	private Type				type;
