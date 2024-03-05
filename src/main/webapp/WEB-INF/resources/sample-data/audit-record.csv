@@ -1,11 +1,13 @@
-key,code,period,mark,link
-audit-record-01,A-000,2022/07/29 23:59,B,https://example.com/objective
-audit-record-02,AB-555,2022/07/29 23:59,B,https://example.com/objective
-audit-record-03,ZZZ-999,2022/07/29 23:59,B,https://example.com/objective
-audit-record-04,ZZZ-999,1990/07/29 23:59,B,https://example.com/objective
-audit-record-05,ZZZ-999,2022/07/29 23:59,A_PLUS,https://example.com/objective
-audit-record-06,ZZZ-999,2022/07/29 23:59,B,https://example.com/objective
-audit-record-07,ZZZ-999,2022/07/29 23:59,C,https://example.com/objective
-audit-record-08,ZZZ-999,2022/07/29 23:59,F,https://example.com/objective
-audit-record-09,ZZZ-999,2022/07/29 23:59,F_MINUS,https://example.com/objective
-audit-record-10,ZZZ-999,2022/07/29 23:59,A,
+key,code,period-start,period-end,mark,link,key:code-audit
+audit-record-01,A-000,2022/07/29 23:59,2022/07/30 00:59,B,https://example.com/objective,code-audit-01
+audit-record-02,AB-555,2022/07/29 23:59,2022/07/30 00:59,B,https://example.com/objective,code-audit-01
+audit-record-03,ZZZ-999,2022/07/29 23:59,2022/07/30 00:59,B,https://example.com/objective,code-audit-01
+audit-record-04,ABC-001,2000/01/01 00:00,2000/01/01 01:00,B,https://example.com/objective,code-audit-01
+audit-record-05,ABC-002,2000/01/01 01:00,2000/01/01 02:00,B,https://example.com/objective,code-audit-01
+audit-record-06,ABC-003,2022/07/29 00:00,2022/07/30 01:00,B,https://example.com/objective,code-audit-01
+audit-record-07,ABC-004,2022/07/29 23:59,2022/07/30 00:59,A_PLUS,https://example.com/objective,code-audit-01
+audit-record-08,ABC-005,2022/07/29 23:59,2022/07/30 00:59,B,https://example.com/objective,code-audit-01
+audit-record-09,ABC-006,2022/07/29 23:59,2022/07/30 00:59,C,https://example.com/objective,code-audit-01
+audit-record-10,ABC-007,2022/07/29 23:59,2022/07/30 00:59,F,https://example.com/objective,code-audit-01
+audit-record-11,ABC-008,2022/07/29 23:59,2022/07/30 00:59,F_MINUS,https://example.com/objective,code-audit-01
+audit-record-12,ABC-009,2022/07/29 23:59,2022/07/30 00:59,B,,code-audit-01
