@@ -55,6 +55,8 @@ public class Project extends AbstractEntity {
 	@URL
 	private String				link;
 
+	// Relationships ----------------------------------------------------------
+
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
