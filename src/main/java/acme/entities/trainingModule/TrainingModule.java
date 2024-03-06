@@ -49,11 +49,11 @@ public class TrainingModule extends AbstractEntity {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	private Date				startMoment;
+	private Date				startUpdateMoment;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	private Date				endMoment;
+	private Date				endUpdateMoment;
 
 	@URL
 	private String				link;
