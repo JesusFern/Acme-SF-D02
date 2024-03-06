@@ -8,5 +8,5 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-validation.pattern	= La referencia sólo puede contener letras, dígitos, subrayados y guiones de la forma: 
+validation.pattern	= La entrada debe seguir el patrón:
 default.placeholder.phone	= Use formato internacional +99 (999) 999999
