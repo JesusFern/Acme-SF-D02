@@ -9,6 +9,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.checkerframework.common.aliasing.qual.Unique;
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractRole;
@@ -27,12 +28,10 @@ public class Client extends AbstractRole {
 	@NotBlank
 	@Unique
 	@Pattern(regexp = "CLI-[0-9]{4}")
-	@NotNull
 	private String				identification;
 
 	@NotBlank
-	@Size(max = 76)
-	@NotNull
+	@Size(max = 75)
 	private String				companyName;
 
 	@NotNull
@@ -40,10 +39,10 @@ public class Client extends AbstractRole {
 
 	@NotBlank
 	@Email
-	@NotNull
 	private String				email;
 
 	@URL
+	@Length(max = 255)
 	private String				optionalLink;
 
 }
