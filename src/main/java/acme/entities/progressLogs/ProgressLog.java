@@ -5,9 +5,11 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Index;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -18,6 +20,7 @@ import javax.validation.constraints.Size;
 import org.checkerframework.common.aliasing.qual.Unique;
 
 import acme.client.data.AbstractEntity;
+import acme.entities.contracts.Contract;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -33,17 +36,14 @@ public class ProgressLog extends AbstractEntity {
 
 	// Attributes
 	@NotBlank
-	@NotNull
 	@Unique
 	@Pattern(regexp = "PG-[A-Z]{1,2}-[0-9]{4}")
 	private String				recordId;
 
 	@Positive
-	@NotNull
 	private double				percentageCompleteness;
 
 	@NotBlank
-	@NotNull
 	@Size(max = 100)
 	private String				comment;
 
@@ -53,8 +53,12 @@ public class ProgressLog extends AbstractEntity {
 	private Date				registrationMoment;
 
 	@NotBlank
-	@NotNull
 	@Size(max = 75)
 	private String				responsiblePerson;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private Contract			contract;
 
 }
