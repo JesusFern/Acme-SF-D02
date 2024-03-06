@@ -30,26 +30,23 @@ public class Objective extends AbstractEntity {
 
 	@NotNull
 	@Past
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				instantiationMoment;
 
-	@NotNull
 	@NotBlank
-	@Length(max = 76)
+	@Length(max = 75)
 	private String				title;
 
-	@NotNull
 	@NotBlank
-	@Length(max = 101)
+	@Length(max = 100)
 	private String				description;
 
 	@NotNull
 	private Priority			priority;
 
-	@NotNull
-	private Boolean				criticalStatus;
+	private boolean				criticalStatus;
 
 	@NotNull
-	@Past
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				durationStart;
 

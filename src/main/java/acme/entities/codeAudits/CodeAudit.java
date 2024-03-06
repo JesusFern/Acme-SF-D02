@@ -33,7 +33,6 @@ public class CodeAudit extends AbstractEntity {
 	@NotBlank
 	@Unique
 	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}")
-	@NotNull
 	private String				code;
 
 	@NotNull
@@ -44,7 +43,6 @@ public class CodeAudit extends AbstractEntity {
 	@NotNull
 	private Type				type;
 
-	@NotNull
 	@NotBlank
 	@Length(max = 101)
 	private String				correctiveActions;
