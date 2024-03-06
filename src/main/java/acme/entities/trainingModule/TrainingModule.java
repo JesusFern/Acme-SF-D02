@@ -33,7 +33,6 @@ public class TrainingModule extends AbstractEntity {
 	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}")
 	@Column(unique = true)
 	@NotBlank
-	@NotNull
 	private String				code;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -41,9 +40,8 @@ public class TrainingModule extends AbstractEntity {
 	@NotNull
 	private Date				creationMoment;
 
-	@Length(max = 101)
+	@Length(max = 100)
 	@NotBlank
-	@NotNull
 	private String				details;
 
 	@NotNull
