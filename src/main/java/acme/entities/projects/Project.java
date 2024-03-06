@@ -32,21 +32,17 @@ public class Project extends AbstractEntity {
 	@Column(unique = true)
 	@Pattern(regexp = "[A-Z]{3}-[0-9]{4}")
 	@NotBlank
-	@NotNull
 	private String				code;
 
-	@NotNull
 	@NotBlank
-	@Length(max = 76)
+	@Length(max = 75)
 	private String				title;
 
-	@NotNull
 	@NotBlank
-	@Length(max = 101)
+	@Length(max = 100)
 	@Column(name = "abstract")
 	private String				abstractString;
 
-	@NotNull
 	private boolean				indication;
 
 	@Min(0)
