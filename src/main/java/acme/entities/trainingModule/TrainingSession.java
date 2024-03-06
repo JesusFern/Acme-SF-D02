@@ -1,5 +1,5 @@
 
-package acme.entities.sponsorships;
+package acme.entities.trainingModule;
 
 import java.util.Date;
 
@@ -8,15 +8,13 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 import javax.validation.Valid;
-import javax.validation.constraints.Min;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
-import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
@@ -26,7 +24,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Invoice extends AbstractEntity {
+public class TrainingSession extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -34,48 +32,35 @@ public class Invoice extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@NotNull
-	@NotBlank
-	@Pattern(regexp = "IN-[0-9]{4}-[0-9]{4}")
+	@Pattern(regexp = "TS-[A-Z]{1,3}-[0-9]{3}")
 	@Column(unique = true)
+	@NotBlank
+	@NotNull
 	private String				code;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Past
 	@NotNull
-	private Date				registrationTime;
+	private Date				period;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@PastOrPresent
+	@Length(max = 76)
+	@NotBlank
 	@NotNull
-	private Date				startDate;
+	private String				location;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	@Length(max = 76)
+	@NotBlank
 	@NotNull
-	private Date				endDate;
+	private String				instructor;
 
+	@Email
 	@NotNull
-	@Min(1)
-	private int					quantity;
-
-	@NotNull
-	@Min(0)
-	private Double				tax;
-
-
-	@Transient
-	public Double totalAmount() {
-		Double result;
-		result = this.getQuantity() * this.getTax();
-		return result;
-	}
-
+	private String				email;
 
 	@URL
-	private String		link;
+	private String				link;
 
-	@NotNull
-	@Valid
 	@ManyToOne
-	private Sponsorship	sponsorship;
+	@Valid
+	@NotNull
+	private TrainingModule		trainingModule;
 }
