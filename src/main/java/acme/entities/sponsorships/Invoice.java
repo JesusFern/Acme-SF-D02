@@ -20,6 +20,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
+import acme.client.data.datatypes.Money;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -55,8 +56,7 @@ public class Invoice extends AbstractEntity {
 	private Date				endDate;
 
 	@NotNull
-	@Min(1)
-	private int					quantity;
+	private Money				quantity;
 
 	@NotNull
 	@Min(0)
@@ -64,10 +64,13 @@ public class Invoice extends AbstractEntity {
 
 
 	@Transient
-	public Double totalAmount() {
+	public Money totalAmount() {
+		Money res = new Money();
 		Double result;
-		result = this.getQuantity() * this.getTax();
-		return result;
+		result = this.getQuantity().getAmount() * this.getTax();
+		res.setAmount(result);
+		res.setCurrency(this.getQuantity().getCurrency());
+		return res;
 	}
 
 
