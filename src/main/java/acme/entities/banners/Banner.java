@@ -41,7 +41,9 @@ public class Banner extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	private Date				endDisplayPeriod;
-
+	
+	
+	
 	@URL
 	@NotNull
 	@Length(max = 255)

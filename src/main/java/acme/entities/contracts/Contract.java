@@ -10,7 +10,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 
 import org.checkerframework.common.aliasing.qual.Unique;
@@ -54,7 +53,6 @@ public class Contract extends AbstractEntity {
 	@Size(max = 100)
 	private String				goals;
 
-	@PositiveOrZero
 	@NotNull
 	private Money				budget;
 
