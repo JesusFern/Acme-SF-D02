@@ -24,19 +24,16 @@ public class Developer extends AbstractRole {
 
 	// Attributes -------------------------------------------------------------
 
-	@Length(max = 76)
+	@Length(max = 75)
 	@NotBlank
-	@NotNull
 	private String				degree;
 
-	@Length(max = 101)
+	@Length(max = 100)
 	@NotBlank
-	@NotNull
 	private String				specialisation;
 
-	@Length(max = 101)
+	@Length(max = 100)
 	@NotBlank
-	@NotNull
 	private String				skills;
 
 	@Email
