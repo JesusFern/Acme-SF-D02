@@ -39,7 +39,11 @@ public class TrainingSession extends AbstractEntity {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	private Date				period;
+	private Date				timeBeforePeriod;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
+	private Date				timeAfterPeriod;
 
 	@Length(max = 75)
 	@NotBlank
