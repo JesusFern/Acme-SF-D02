@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -34,9 +35,8 @@ public class Risk extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Column(unique = true)
-	@Pattern(regexp = "R-[0-9]{3}")
+	@Pattern(regexp = "^R-[0-9]{3}$")
 	@NotBlank
-	@NotNull
 	private String				reference;
 
 	@NotNull
@@ -44,18 +44,18 @@ public class Risk extends AbstractEntity {
 	@Temporal(TemporalType.DATE)
 	private Date				identificationDate;
 
-	@NotNull
-	@Min(0)
-	private Double				impact;
-
-	@NotNull
 	@Min(0)
 	@Max(100)
-	private Double				probability;
+	@Digits(integer = 3, fraction = 2)
+	private double				impact;
 
-	@NotNull
+	@Min(0)
+	@Max(100)
+	@Digits(integer = 3, fraction = 2)
+	private double				probability;
+
 	@NotBlank
-	@Length(max = 101)
+	@Length(max = 100)
 	private String				description;
 
 	@URL
