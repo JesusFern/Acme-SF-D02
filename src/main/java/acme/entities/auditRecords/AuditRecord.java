@@ -33,7 +33,7 @@ public class AuditRecord extends AbstractEntity {
 
 	@NotBlank
 	@Column(unique = true)
-	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}")
+	@Pattern(regexp = "^AU-[0-9]{4}-[0-9]{3}$", message = "{validation.pattern} + AU-0000-000")
 	private String				code;
 
 	@NotNull
