@@ -11,7 +11,7 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
@@ -31,7 +31,7 @@ public class ProgressLog extends AbstractEntity {
 	// Attributes
 	@NotBlank
 	@Column(unique = true)
-	@Pattern(regexp = "PG-[A-Z]{1,2}-[0-9]{4}")
+	@Pattern(regexp = "^PG-[A-Z]{1,2}-[0-9]{4}$", message = "{validation.job.reference} + PG-A-1111")
 	private String				recordId;
 
 	@Positive
@@ -42,7 +42,7 @@ public class ProgressLog extends AbstractEntity {
 	private String				comment;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Past
+	@PastOrPresent
 	@NotNull
 	private Date				registrationMoment;
 

@@ -27,7 +27,7 @@ public class Client extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 	@NotBlank
 	@Unique
-	@Pattern(regexp = "CLI-[0-9]{4}")
+	@Pattern(regexp = "^CLI-[0-9]{4}$", message = "{validation.job.reference} + CLI-1111")
 	private String				identification;
 
 	@NotBlank
