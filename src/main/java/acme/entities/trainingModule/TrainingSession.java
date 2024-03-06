@@ -35,21 +35,18 @@ public class TrainingSession extends AbstractEntity {
 	@Pattern(regexp = "TS-[A-Z]{1,3}-[0-9]{3}")
 	@Column(unique = true)
 	@NotBlank
-	@NotNull
 	private String				code;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	private Date				period;
 
-	@Length(max = 76)
+	@Length(max = 75)
 	@NotBlank
-	@NotNull
 	private String				location;
 
-	@Length(max = 76)
+	@Length(max = 75)
 	@NotBlank
-	@NotNull
 	private String				instructor;
 
 	@Email
@@ -59,7 +56,7 @@ public class TrainingSession extends AbstractEntity {
 	@URL
 	private String				link;
 
-	@ManyToOne
+	@ManyToOne(optional = false)
 	@Valid
 	@NotNull
 	private TrainingModule		trainingModule;
