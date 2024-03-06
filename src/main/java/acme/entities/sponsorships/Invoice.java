@@ -34,7 +34,6 @@ public class Invoice extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@NotNull
 	@NotBlank
 	@Pattern(regexp = "IN-[0-9]{4}-[0-9]{4}")
 	@Column(unique = true)
