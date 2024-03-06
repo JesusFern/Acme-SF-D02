@@ -9,7 +9,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -36,7 +36,7 @@ public class CodeAudit extends AbstractEntity {
 	private String				code;
 
 	@NotNull
-	@Past
+	@PastOrPresent
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				execution;
 
@@ -44,7 +44,7 @@ public class CodeAudit extends AbstractEntity {
 	private Type				type;
 
 	@NotBlank
-	@Length(max = 101)
+	@Length(max = 100)
 	private String				correctiveActions;
 
 	@NotNull
