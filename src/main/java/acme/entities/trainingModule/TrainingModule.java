@@ -9,7 +9,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -30,13 +30,13 @@ public class TrainingModule extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}")
+	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}", message = "{validation.pattern} + ABC-000")
 	@Column(unique = true)
 	@NotBlank
 	private String				code;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Past
+	@PastOrPresent
 	@NotNull
 	private Date				creationMoment;
 
@@ -48,14 +48,17 @@ public class TrainingModule extends AbstractEntity {
 	private Level				difficulty;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Past
+	@PastOrPresent
 	@NotNull
-	private Date				updateMoment;
+	private Date				startMoment;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@PastOrPresent
+	@NotNull
+	private Date				endMoment;
 
 	@URL
 	private String				link;
 
-	@Temporal(TemporalType.TIME)
-	@NotNull
-	private Date				time;
+	private int					time;
 }
