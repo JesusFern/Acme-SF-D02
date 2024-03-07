@@ -4,12 +4,12 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>288</x>
+      <x>296</x>
       <y>200</y>
       <w>40</w>
       <h>104</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=&lt;-x
 m1=1
 m2=1..n</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
@@ -17,7 +17,7 @@ m2=1..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>616</x>
+      <x>624</x>
       <y>448</y>
       <w>112</w>
       <h>88</h>
@@ -33,7 +33,7 @@ Types
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>616</x>
+      <x>624</x>
       <y>312</y>
       <w>352</w>
       <h>128</h>
@@ -53,7 +53,7 @@ Client
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>632</x>
+      <x>640</x>
       <y>128</y>
       <w>288</w>
       <h>168</h>
@@ -75,7 +75,7 @@ Client Dashboard
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>112</x>
+      <x>120</x>
       <y>288</y>
       <w>360</w>
       <h>168</h>
@@ -98,7 +98,7 @@ Contract
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
+      <x>128</x>
       <y>536</y>
       <w>360</w>
       <h>152</h>
@@ -119,7 +119,7 @@ Progress Log
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>288</x>
+      <x>296</x>
       <y>448</y>
       <w>40</w>
       <h>104</h>
@@ -132,13 +132,13 @@ m2=1..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>464</x>
+      <x>472</x>
       <y>360</y>
       <w>168</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>created by &gt;
-lt=&lt;-
+lt=&lt;-x
 m1=*
 m2=1</panel_attributes>
     <additional_attributes>190.0;20.0;10.0;20.0</additional_attributes>
@@ -146,7 +146,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>128</x>
+      <x>136</x>
       <y>56</y>
       <w>336</w>
       <h>152</h>
