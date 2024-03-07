@@ -53,28 +53,6 @@ Client
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>640</x>
-      <y>128</y>
-      <w>288</w>
-      <h>168</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Form&gt;&gt;
-Client Dashboard
---
-+ totalNumberOfProgressLogsBelow25: int
-+ totalNumberOfProgressLogsBetween25to50: int
-+ totalNumberOfProgressLogsBetween50to75: int
-+ totalNumberOfProgressLogsAbove75: int
-+ averageContractsBudget: double
-+ deviationProjectsCost: double
-+ minimumContractsBudget: double
-+ maximumContractsBudget: double
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
       <x>120</x>
       <y>288</y>
       <w>360</w>
@@ -160,6 +138,30 @@ Project
 + indication: boolen
 + cost: int
 + link: String {URL}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>112</y>
+      <w>280</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+Client Dashboard
+--
++ serialVersionUID = 1L: long
++ totalNumberOfProgressLogsBelow25: Integer
++ totalNumberOfProgressLogsBetween25to50: Integer
++ totalNumberOfProgressLogsBetween50to75: Integer
++ totalNumberOfProgressLogsAbove75: Integer
++ averageContractsBudget: Double
++ deviationProjectsCost: Double
++ minimumContractsBudget: Double
++ maximumContractsBudget: Double
+
+</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
