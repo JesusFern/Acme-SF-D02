@@ -18,7 +18,7 @@ Project
 + abstract: String {NotBlank, Length(0, 101)}
 + indication: Boolean
 + cost: Money
-- link: String {URL}</panel_attributes>
++ link: String {URL}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -65,7 +65,7 @@ Client
 +companyName: String {NotBlank,Length(0,76)}
 +type: Types 
 +email: String {Email,NotBlank}
--optionalLink: String {URL,Length(0,255)}
++optionalLink: String {URL,Length(0,255)}
 
 </panel_attributes>
     <additional_attributes/>
@@ -144,7 +144,7 @@ Progress Log
       <w>40</w>
       <h>104</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-x
 m1=1
 m2=1..n</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
