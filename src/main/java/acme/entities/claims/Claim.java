@@ -29,29 +29,25 @@ public class Claim extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Pattern(regexp = "C-[0-9]{4}")
-	@NotBlank
+	@Pattern(regexp = "^C-[0-9]{4}$", message = "{validation.pattern} + C-0000")
 	@Column(unique = true)
-	@NotNull
+	@NotBlank
 	private String				code;
 
 	@Past
 	@NotNull
 	private Date				instantiationMoment;
 
-	@Length(max = 76)
+	@Length(max = 75)
 	@NotBlank
-	@NotNull
 	private String				heading;
 
-	@Length(max = 101)
+	@Length(max = 100)
 	@NotBlank
-	@NotNull
 	private String				description;
 
-	@Length(max = 101)
+	@Length(max = 100)
 	@NotBlank
-	@NotNull
 	private String				department;
 
 	@Email

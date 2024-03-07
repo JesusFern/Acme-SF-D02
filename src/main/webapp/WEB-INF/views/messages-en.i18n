@@ -8,5 +8,5 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-validation.pattern	= The reference must have letters, digits, underscores, and hyphens only with the pattern: 
+validation.pattern	= The input must follow the pattern:
 default.placeholder.phone	= Use international format +99 (999) 999999 
