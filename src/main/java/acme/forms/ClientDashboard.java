@@ -3,7 +3,7 @@ package acme.forms;
 
 import acme.client.data.AbstractForm;
 
-public class Client extends AbstractForm {
+public class ClientDashboard extends AbstractForm {
 	// Serialisation identifier -----------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
