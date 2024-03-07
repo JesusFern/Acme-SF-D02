@@ -4,21 +4,20 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>50</x>
+      <x>30</x>
       <y>170</y>
-      <w>400</w>
+      <w>420</w>
       <h>190</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Project
 --
-+ id: Long
-+ code: String { Unique, NotBlank, Pattern(" [A-Z]{3}-[0-9]{4} ") }
-+ title: String {NotBlank, Length(0, 76)}
-+ abstract: String {NotBlank, Length(0, 101)}
-+ indication: Boolean
-+ cost: Money
-- link: String {URL}</panel_attributes>
++ code: String { Unique, NotBlank, Pattern(" ^[A-Z]{3}-[0-9]{4}$ ") }
++ title: String {NotBlank, Length(0, 75)}
++ abstract: String {NotBlank, Length(0, 100)}
++ indication: boolen
++ cost: int
++ link: String {URL}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -32,11 +31,10 @@ Project
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 User Story
 --
-+ id: Long
-+ title: String {NotBlank, Length(0, 76)}
-+ description: String {NotBlank, Length(0, 101)}
-+ acceptanceCriteria: String {NotBlank, Length(0, 101)}
-+ estimatedCost: Integer {Min(1)}
++ title: String {NotBlank, Length(0, 75)}
++ description: String {NotBlank, Length(0, 100)}
++ acceptanceCriteria: String {NotBlank, Length(0, 100)}
++ estimatedCost: int {Min(1)}
 + priority: Priority
 </panel_attributes>
     <additional_attributes/>
@@ -65,11 +63,10 @@ m2=1..n</panel_attributes>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Manager
 --
-+ id: Long
-+ degree: String {NotBlank, Length(0, 76)}
-+ overview: String {NotBlank, Length(0, 101)}
-+ certifications: String {NotBlank, Length(0, 101)}
-- link: String {URL}</panel_attributes>
++ degree: String {NotBlank, Length(0, 75)}
++ overview: String {NotBlank, Length(0, 100)}
++ certifications: String {NotBlank, Length(0, 100)}
++ link: String {URL}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -97,18 +94,18 @@ managed by &gt;</panel_attributes>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 Manager Dashboard
 --
-+ totalNumberOfMustUserStories: Double						
-+ totalNumberOfShouldUserStories: Double
-+ totalNumberOfCouldUserStories: Double	
-+ totalNumberOfWontUserStories: Double	
-+ averageEstimatedCostUserStories: Double	
-+ deviationEstimatedCostUserStories: Double	
-+ minimumEstimatedCostUserStories: Double	
-+ maximumEstimatedCostUserStories: Double
-+ averageProjectsCost: Double	
-+ deviationProjectsCost: Double	
-+ minimumProjectsCost: Double	
-+ maximumProjectsCost: Double	</panel_attributes>
++ totalNumberOfMustUserStories: int						
++ totalNumberOfShouldUserStories: int
++ totalNumberOfCouldUserStories: int	
++ totalNumberOfWontUserStories: int	
++ averageEstimatedCostUserStories: double	
++ deviationEstimatedCostUserStories: double	
++ minimumEstimatedCostUserStories: int	
++ maximumEstimatedCostUserStories: int
++ averageProjectsCost: double	
++ deviationProjectsCost: double	
++ minimumProjectsCost: int	
++ maximumProjectsCost: int	</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
