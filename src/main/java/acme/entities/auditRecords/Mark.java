@@ -1,6 +1,6 @@
 
 package acme.entities.auditRecords;
 
-public enum Marks {
+public enum Mark {
 	A_PLUS, A, B, C, F, F_MINUS
 }

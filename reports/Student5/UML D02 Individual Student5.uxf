@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>552</x>
+      <y>88</y>
+      <w>280</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+Auditor Dashboard
+--
++totalNumberOfStaticCodeAudit:	int
++totalNumberOfDynamicCodeAudit: int
++averageNumberOfAuditRecords:	double
++deviationNumberOfAuditRecords: double
++minimumNumberOfAuditRecords:double
++maximumNumberOfAuditRecords:double
++averageNumberOfPeriod:double
++deviationNumberOfPeriod:double
++minimumNumberOfPeriod:double
++maximumNumberOfPeriod: double
+	</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>152</x>
+      <y>232</y>
+      <w>112</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Mark
+--
++ A_PLUS
++ A
++ B
++ C
++ F
++ F_MINUS
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>488</x>
+      <y>576</y>
+      <w>112</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Type
+--
++ STATIC
++ DYNAMIC
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>152</x>
+      <y>328</y>
+      <w>392</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Audit Record
+--
++ code: String { Unique, NotBlank, Pattern("AU-[0-9]{4}-[0-9]{3}") }
++ periodStart: Date {PastOrPresent, Temporal(TIMESTAMP)}
++ periodEnd: Date {Past, Temporal(TIMESTAMP)}
++ mark: Mark
++ link: String {URL}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>576</y>
+      <w>280</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Code Audit
+--
++ code: String {NotBlank, Unique,Pattern("[A-Z]{1,3}-[0-9]{3}")}
++ execution: Date {Past, Temporal(TIMESTAMP)}
++ type: Type 
++ correctiveActions: String {NotBlank, Length(0,101)}
++ mark: Mark
++ link: String {URL}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>624</x>
+      <y>336</y>
+      <w>256</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Auditor
+--
++ firm: String {NotBlank, Length(0, 76)}
++ professionalId: String {NotBlank, Length(0, 26)}
++ certifications: String {NotBlank, Length(0, 101)}
++ link: String {URL}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>536</x>
+      <y>392</y>
+      <w>104</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+Created by
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>328</x>
+      <y>472</y>
+      <w>40</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-x
+m2=1..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+</diagram>
