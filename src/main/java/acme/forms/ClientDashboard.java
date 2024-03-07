@@ -9,14 +9,14 @@ public class ClientDashboard extends AbstractForm {
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-	Double						totalNumberOfProgressLogsBelow25;
-	Double						totalNumberOfProgressLogsBetween25to50;
-	Double						totalNumberOfProgressLogsBetween50to75;
-	Double						totalNumberOfProgressLogsAbove75;
+	int							totalNumberOfProgressLogsBelow25;
+	int							totalNumberOfProgressLogsBetween25to50;
+	int							totalNumberOfProgressLogsBetween50to75;
+	int							totalNumberOfProgressLogsAbove75;
 
-	Double						averageContractsBudget;
-	Double						deviationProjectsCost;
-	Double						minimumContractsBudget;
-	Double						maximumContractsBudget;
+	double						averageContractsBudget;
+	double						deviationProjectsCost;
+	double						minimumContractsBudget;
+	double						maximumContractsBudget;
 
 }
