@@ -2,42 +2,22 @@
 <diagram program="umlet" version="15.1">
   <zoom_level>8</zoom_level>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>96</x>
-      <y>64</y>
-      <w>320</w>
-      <h>152</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Project
---
-+ id: Long
-+ code: String { Unique, NotBlank, Pattern(" [A-Z]{3}-[0-9]{4} ") }
-+ title: String {NotBlank, Length(0, 76)}
-+ abstract: String {NotBlank, Length(0, 101)}
-+ indication: Boolean
-+ cost: Money
-+ link: String {URL}</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>248</x>
-      <y>208</y>
+      <x>288</x>
+      <y>200</y>
       <w>40</w>
-      <h>96</h>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 m2=1..n</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>608</x>
+      <x>616</x>
       <y>448</y>
       <w>112</w>
       <h>88</h>
@@ -53,7 +33,7 @@ Types
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>608</x>
+      <x>616</x>
       <y>312</y>
       <w>336</w>
       <h>128</h>
@@ -62,7 +42,7 @@ Types
 Client
 --
 + identification: String {Unique,NotBlank, +Pattern("CLI-[0-9]{4}")}
-+ companyName: String {NotBlank,Length(0,76)}
++ companyName: String {NotBlank,Length(0,75)}
 + type: Types 
 + email: String {Email,NotBlank}
 + optionalLink: String {URL,Length(0,255)}
@@ -73,7 +53,7 @@ Client
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>624</x>
+      <x>632</x>
       <y>128</y>
       <w>288</w>
       <h>168</h>
@@ -95,7 +75,7 @@ Client Dashboard
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>104</x>
+      <x>112</x>
       <y>288</y>
       <w>360</w>
       <h>168</h>
@@ -105,8 +85,8 @@ Contract
 --
 + code: String {NotBlank,Unique,Pattern="[A-Z]{1,3}-[0-9]{3}"}
 + instantiationMoment: Date {PastOrPresent,Temporal(TIMESTAMP)}
-+ providerName: String {NotBlank,Length(0,76)}
-+ customerName: String {NotBlank,Length(0,76)}
++ providerName: String {NotBlank,Length(0,75)}
++ customerName: String {NotBlank,Length(0,75)}
 + goals: String {NotBlank,Length(0,100)}
 + budget: Money
 + project: Project
@@ -118,7 +98,7 @@ Contract
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>88</x>
+      <x>120</x>
       <y>536</y>
       <w>360</w>
       <h>152</h>
@@ -130,7 +110,7 @@ Progress Log
 + percentageCompleteness: double {Max(100),Min(0),Digits=(3,2)}
 + comment: String {NotBlank,Length(0,100)}
 + registrationMoment: Date {PastOrPresent,Temporal(TIMESTAMP)}
-+ responsiblePerson: String {NotBlank,Length(0,76)}
++ responsiblePerson: String {NotBlank,Length(0,75)}
 + contract: Contract
 
 </panel_attributes>
@@ -139,7 +119,7 @@ Progress Log
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>256</x>
+      <x>288</x>
       <y>448</y>
       <w>40</w>
       <h>104</h>
@@ -152,7 +132,7 @@ m2=1..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>456</x>
+      <x>464</x>
       <y>360</y>
       <w>168</w>
       <h>40</h>
@@ -162,5 +142,24 @@ lt=&lt;-
 m1=*
 m2=1</panel_attributes>
     <additional_attributes>190.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>128</x>
+      <y>56</y>
+      <w>336</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Project
+--
++ code: String { Unique, NotBlank, Pattern(" ^[A-Z]{3}-[0-9]{4}$ ") }
++ title: String {NotBlank, Length(0, 75)}
++ abstract: String {NotBlank, Length(0, 100)}
++ indication: boolen
++ cost: int
++ link: String {URL}</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
