@@ -35,13 +35,13 @@ Types
     <coordinates>
       <x>616</x>
       <y>312</y>
-      <w>336</w>
+      <w>352</w>
       <h>128</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Client
 --
-+ identification: String {Unique,NotBlank, +Pattern("CLI-[0-9]{4}")}
++ identification: String {Unique,NotBlank, +Pattern("^CLI-[0-9]{4}$")}
 + companyName: String {NotBlank,Length(0,75)}
 + type: Types 
 + email: String {Email,NotBlank}
@@ -83,7 +83,7 @@ Client Dashboard
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Contract
 --
-+ code: String {NotBlank,Unique,Pattern="[A-Z]{1,3}-[0-9]{3}"}
++ code: String {NotBlank,Unique,Pattern="^[A-Z]{1,3}-[0-9]{3}$"}
 + instantiationMoment: Date {PastOrPresent,Temporal(TIMESTAMP)}
 + providerName: String {NotBlank,Length(0,75)}
 + customerName: String {NotBlank,Length(0,75)}
@@ -106,7 +106,7 @@ Contract
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Progress Log
 --
-+ recordId: String {NotBlank,Unique,Pattern="PG-[A-Z]{1,2}-[0-9]{4}"}
++ recordId: String {NotBlank,Unique,Pattern="^PG-[A-Z]{1,2}-[0-9]{4}$"}
 + percentageCompleteness: double {Max(100),Min(0),Digits=(3,2)}
 + comment: String {NotBlank,Length(0,100)}
 + registrationMoment: Date {PastOrPresent,Temporal(TIMESTAMP)}
