@@ -28,8 +28,8 @@ fontsize=10
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>600</x>
-      <y>310</y>
+      <x>460</x>
+      <y>320</y>
       <w>370</w>
       <h>150</h>
     </coordinates>
@@ -38,13 +38,13 @@ fontsize=10
 TrainingModule
 --
 + code: String {Unique, NotBlank, Pattern("A-Z]{1,3}-[0-9]{3}")}
-+ creationMoment: Date {Temporal(TIMESTAMP), PastOrPresent}
++ creationMoment: Date {NotNull, Temporal(TIMESTAMP), PastOrPresent}
 + details: String {NotBlank, Length(0,100)}
-+ difficulty: Level
-+ startMoment: Date {Temporal(TIMESTAMP)}
-+ endMoment: Date {Temporal(TIMESTAMP)}
++ difficulty: Level {NotNull}
++ startMoment: Date {NotNull, Temporal(TIMESTAMP)}
++ endMoment: Date {NotNull, Temporal(TIMESTAMP)}
 + link: String {URL}
-+ time: int
++ time: int {Min(0)}
 
 </panel_attributes>
     <additional_attributes/>
@@ -52,8 +52,8 @@ TrainingModule
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>470</x>
-      <y>310</y>
+      <x>330</x>
+      <y>320</y>
       <w>100</w>
       <h>80</h>
     </coordinates>
@@ -70,8 +70,8 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>600</x>
-      <y>560</y>
+      <x>460</x>
+      <y>570</y>
       <w>370</w>
       <h>130</h>
     </coordinates>
@@ -80,11 +80,11 @@ bg=green
 TrainingSession
 --
 + code: String {Unique, NotBlank, Pattern("TS-[A-Z]{1,3}-[0-9]{3}")}
-+ timeBeforePeriod: Date {Temporal(TIMESTAMP)}
-+ timeAfterPeriod: Date {Temporal(TIMESTAMP)}
++ timeBeforePeriod: Date {NotNull, Temporal(TIMESTAMP)}
++ timeAfterPeriod: Date {NotNull, Temporal(TIMESTAMP)}
 + location: String {NotBlank, Length(0,76)}
 + instructor: String {NotBlank, Length(0,76)}
-+ email: String {Email}
++ email: String {NotNull, Email}
 + link: String {URL}
 
 </panel_attributes>
@@ -93,8 +93,8 @@ TrainingSession
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>770</x>
-      <y>450</y>
+      <x>630</x>
+      <y>460</y>
       <w>40</w>
       <h>130</h>
     </coordinates>
@@ -105,28 +105,28 @@ m2=1..*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1040</x>
-      <y>100</y>
+      <x>900</x>
+      <y>110</y>
       <w>290</w>
       <h>130</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 DeveloperDashboard
 --
-+ totalNumberOfTrainingModulesWithUpdatedMoment: int
-+ totalNumberOfTrainingSessionsWithLink: int
-+ averageTimeTrainingModules: double
-+ deviationTimeTrainingModules: double
-+ minimumTimeTrainingModules: int
-+ maximumTimeTrainingModules: int
++ totalNumberOfTrainingModulesWithUpdatedMoment: Integer
++ totalNumberOfTrainingSessionsWithLink: Integer
++ averageTimeTrainingModules: Double
++ deviationTimeTrainingModules: Double
++ minimumTimeTrainingModules: Integer
++ maximumTimeTrainingModules: Integer
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>600</x>
-      <y>90</y>
+      <x>460</x>
+      <y>100</y>
       <w>370</w>
       <h>140</h>
     </coordinates>
@@ -137,16 +137,16 @@ Project
 + code: String { Unique, NotBlank, Pattern(" ^[A-Z]{3}-[0-9]{4}$ ") }
 + title: String {NotBlank, Length(0, 75)}
 + abstract: String {NotBlank, Length(0, 100)}
-+ indication: boolean
-+ cost: int
++ indication: boolen
++ cost: int int {Min(0)}
 + link: String {URL}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>770</x>
-      <y>220</y>
+      <x>630</x>
+      <y>230</y>
       <w>50</w>
       <h>110</h>
     </coordinates>
@@ -158,8 +158,8 @@ m2=1..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1070</x>
-      <y>320</y>
+      <x>930</x>
+      <y>330</y>
       <w>280</w>
       <h>120</h>
     </coordinates>
@@ -170,7 +170,7 @@ Developer
 + degree: String {NotBlank,Length(0,75)}
 + specialisation: String {NotBlank,Length(0,100)}
 + skills: String {NotBlank,Length(0,100)}
-+ email: String {Email}
++ email: String {NotNull, Email}
 + link: String {URL}
 
 </panel_attributes>
@@ -179,8 +179,8 @@ Developer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>960</x>
-      <y>380</y>
+      <x>820</x>
+      <y>390</y>
       <w>130</w>
       <h>40</h>
     </coordinates>
@@ -193,8 +193,8 @@ m2=1</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>270</x>
-      <y>400</y>
+      <x>130</x>
+      <y>410</y>
       <w>160</w>
       <h>80</h>
     </coordinates>
@@ -208,8 +208,8 @@ creation moment</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
-      <y>400</y>
+      <x>280</x>
+      <y>410</y>
       <w>200</w>
       <h>60</h>
     </coordinates>
@@ -220,8 +220,8 @@ creation moment</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>270</x>
-      <y>510</y>
+      <x>130</x>
+      <y>520</y>
       <w>160</w>
       <h>90</h>
     </coordinates>
@@ -236,8 +236,8 @@ moment</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
-      <y>430</y>
+      <x>280</x>
+      <y>440</y>
       <w>200</w>
       <h>140</h>
     </coordinates>
