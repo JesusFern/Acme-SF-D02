@@ -1,3 +1,4 @@
+
 package acme.forms;
 
 import acme.client.data.AbstractForm;
@@ -6,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ManagerDashboard  extends AbstractForm {
+public class ManagerDashboard extends AbstractForm {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -14,19 +15,19 @@ public class ManagerDashboard  extends AbstractForm {
 
 	// Attributes -------------------------------------------------------------
 
-	Double						totalNumberOfMustUserStories;
-	Double						totalNumberOfShouldUserStories;
-	Double						totalNumberOfCouldUserStories;
-	Double						totalNumberOfWontUserStories;
-	
+	Integer						totalNumberOfMustUserStories;
+	Integer						totalNumberOfShouldUserStories;
+	Integer						totalNumberOfCouldUserStories;
+	Integer						totalNumberOfWontUserStories;
+
 	Double						averageEstimatedCostUserStories;
 	Double						deviationEstimatedCostUserStories;
-	Double						minimumEstimatedCostUserStories;
-	Double						maximumEstimatedCostUserStories;
-	
+	Integer						minimumEstimatedCostUserStories;
+	Integer						maximumEstimatedCostUserStories;
+
 	Double						averageProjectsCost;
 	Double						deviationProjectsCost;
-	Double						minimumProjectsCost;
-	Double						maximumProjectsCost;
+	Integer						minimumProjectsCost;
+	Integer						maximumProjectsCost;
 
 }
