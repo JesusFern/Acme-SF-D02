@@ -15,16 +15,16 @@ public class SponsorDashboard extends AbstractForm {
 
 	// Attributes -------------------------------------------------------------
 
-	Integer						totalNumberOfInvoicesWithTaxBelow21;
+	Integer						totalNumberOfInvoicesWithTaxLessOrEquals21;
 	Integer						totalNumberOfSponsorshipsLink;
 
-	Double						averageSponsorshipsAmount;
-	Double						deviationSponsorshipsAmount;
+	Money						averageSponsorshipsAmount;
+	Money						deviationSponsorshipsAmount;
 	Money						minimumSponsorshipsAmount;
 	Money						maximumSponsorshipsAmount;
 
-	Double						averageInvoicesQuantity;
-	Double						deviationInvoicesQuantity;
+	Money						averageInvoicesQuantity;
+	Money						deviationInvoicesQuantity;
 	Money						minimumInvoicesQuantity;
 	Money						maximumInvoicesQuantity;
 
