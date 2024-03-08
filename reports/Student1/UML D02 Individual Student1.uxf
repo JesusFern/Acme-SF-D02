@@ -35,7 +35,8 @@ User Story
 + description: String {NotBlank, Length(0, 100)}
 + acceptanceCriteria: String {NotBlank, Length(0, 100)}
 + estimatedCost: int {Min(1)}
-+ priority: Priority
++ priority: Priority {NotNull}
++ link: String {URL}
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -44,12 +45,12 @@ User Story
     <coordinates>
       <x>250</x>
       <y>370</y>
-      <w>50</w>
+      <w>60</w>
       <h>180</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-m1=1..n
-m2=1..n</panel_attributes>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-x
+m1= 1..n
+m2= 1..n</panel_attributes>
     <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
   </element>
   <element>
@@ -77,8 +78,8 @@ Manager
       <w>270</w>
       <h>50</h>
     </coordinates>
-    <panel_attributes>lt=-&gt;
-m1=*
+    <panel_attributes>lt=x-&gt;
+m1= *
 m2=1
 written by &gt;</panel_attributes>
     <additional_attributes>10.0;20.0;250.0;20.0</additional_attributes>
