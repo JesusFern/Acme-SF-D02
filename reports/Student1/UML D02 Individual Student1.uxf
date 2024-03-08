@@ -94,18 +94,18 @@ written by &gt;</panel_attributes>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 Manager Dashboard
 --
-+ totalNumberOfMustUserStories: int						
-+ totalNumberOfShouldUserStories: int
-+ totalNumberOfCouldUserStories: int	
-+ totalNumberOfWontUserStories: int	
-+ averageEstimatedCostUserStories: double	
-+ deviationEstimatedCostUserStories: double	
-+ minimumEstimatedCostUserStories: int	
-+ maximumEstimatedCostUserStories: int
-+ averageProjectsCost: double	
-+ deviationProjectsCost: double	
-+ minimumProjectsCost: int	
-+ maximumProjectsCost: int	</panel_attributes>
++ totalNumberOfMustUserStories: Integer						
++ totalNumberOfShouldUserStories: Integer
++ totalNumberOfCouldUserStories: Integer	
++ totalNumberOfWontUserStories: Integer	
++ averageEstimatedCostUserStories: Double	
++ deviationEstimatedCostUserStories: Double	
++ minimumEstimatedCostUserStories: Integer	
++ maximumEstimatedCostUserStories: Integer
++ averageProjectsCost: Double	
++ deviationProjectsCost: Double	
++ minimumProjectsCost: Integer	
++ maximumProjectsCost: Integer	</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
