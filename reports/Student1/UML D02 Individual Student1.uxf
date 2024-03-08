@@ -16,7 +16,7 @@ Project
 + title: String {NotBlank, Length(0, 75)}
 + abstract: String {NotBlank, Length(0, 100)}
 + indication: boolen
-+ cost: int
++ cost: int int {Min(0)}
 + link: String {URL}</panel_attributes>
     <additional_attributes/>
   </element>
